@@ -8,16 +8,25 @@ class Piano extends Component {
   render(){
     let viewBox = this.props.viewBox;
 
-    let ratioWidthToBoard = 565/1600;
+    let widthOriginalSVG = 1155
+    let heightOriginalSVG = 898
+    let widthSVGArtboard = 1600
+    let topMarginSVGArtboard = 332
+    let leftMarginSVGArtboard = 222
+
+    let ratioWidthToBoard = widthOriginalSVG/widthSVGArtboard;
     let width = viewBox.x * ratioWidthToBoard *.66;
-    let ratioHeightToSelf = 273/565;
+
+    let ratioHeightToSelf = heightOriginalSVG/widthOriginalSVG;
     let height = width * ratioHeightToSelf;
 
 
-    let paddingLeft = viewBox.x * (111/1600);
+    let paddingLeft = viewBox.x * (leftMarginSVGArtboard/widthSVGArtboard);
+    let marginTop = viewBox.y * (topMarginSVGArtboard/widthSVGArtboard);
+    let margin = `${marginTop} ${paddingLeft}`
 
     return(
-      <svg id="Piano" xmlns="http://www.w3.org/2000/svg" width="1155.4" height="906.2" viewBox="0 0 1155.4 906.2">
+      <svg id="Piano" xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 1155.4 906.2" style={{margin: margin}}>
         <path className="st0" d="M342.7 634.8v6.6c6.6 0 16.9 7.2 16.9 7.2 1.3 1 1.2 1.8 1.2 1.8 0 .4-1.2.4-1.2.4l-18.1-.3H332l-19.3.3s-1.2 0-1.2-.4c0 0-.2-.8 1.2-1.8 0 0 10.2-7.2 16.9-7.2v-6.6h13.1z"/>
         <path className="st0" d="M356.8 574.2v60.6h-42.3v-59.7zM336.9 855.9l7.1-20.3c2.5-.8 6.2-3.3 7.5-4.6.7-.7 1.4-1.9 1.4-3 0-1.9-2.2-1.7-2.2-1.7l-10.7.1s17.7-159.4 17.7-166c0-6.6-12.5-5.4-12.5-5.4v-4.6H327v4.6s-12.5-1.2-12.5 5.4c0 6.6 17.4 166 17.4 166l-10.2-.1s-2.2-.1-2.3 1.9c0 1 .7 2.1 1.3 2.7 1.2 1.2 5 3.7 7.5 4.6l7.1 20.3c0 .1.9 1 1.6.1zM198.3 679.7v6.6c6.6 0 16.9 7.2 16.9 7.2 1.3 1 1.2 1.8 1.2 1.8 0 .4-1.2.4-1.2.4l-18.1-.3h-9.5l-19.3.3s-1.2 0-1.2-.4c0 0-.2-.8 1.2-1.8 0 0 10.2-7.2 16.9-7.2v-6.6h13.1zM212.4 619.1v60.6h-42.3v-59.8z"/>
         <path className="st0" d="M192.5 900.7l7.1-20.3c2.5-.8 6.2-3.3 7.5-4.6.7-.7 1.4-1.9 1.4-3 0-1.9-2.2-1.7-2.2-1.7l-10.7.1s17.7-159.4 17.7-166c0-6.6-12.5-5.4-12.5-5.4v-4.6h-18.3v4.6s-12.5-1.2-12.5 5.4c0 6.6 17.4 166 17.4 166l-10.2-.1s-2.2-.1-2.3 1.9c0 1 .7 2.1 1.3 2.7 1.2 1.2 5 3.7 7.5 4.6l7.1 20.3c0 .1.9 1 1.7.1zM35.2 339.3v5.8c5.9 0 15 6.3 15 6.3 1.2.9 1 1.6 1 1.6 0 .4-1.1.4-1.1.4l-16-.4h-8.5l-17.2.2s-1.1 0-1.1-.4c0 0-.2-.7 1-1.6 0 0 9.1-6.3 15-6.3v-5.8h11.9z"/>
