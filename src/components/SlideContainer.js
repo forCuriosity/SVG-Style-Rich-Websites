@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 
 import ClassicalMusic from './ClassicalMusic/ClassicalMusic';
-import TilesSharp from './TilesSharp/TilesSharp';
-import Arrows from './Arrows/MobileArrows'
+import TilesSharp from './Background/TilesSharp/TilesSharp';
+import Arrows from './Objects/Arrows/MobileArrows'
 
 
 let w = window,
