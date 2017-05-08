@@ -4,41 +4,37 @@ import { Container } from 'semantic-ui-react'
 
 import Brand from './Brand'
 import Piano from './Piano'
+import Portrait from './Portrait'
+import Tracks from './Tracks'
+import Background from './Background'
 
 import './ClassicalMusic.css'
 
 
 class Album extends Component {
+  render(){
+  // PADDING
+  let padding = {
+    height: 18,
+    width: 11
+  }
 
-svg(){
-  // let viewBox = this.props.viewBox;
+  let background = {
+    height: this.props.viewBox.y - (padding.height * 2),
+    width: this.props.viewBox.x - (padding.width * 2) - 14
+  }
 
-  // document.addEventListener('DOMContentLoaded', function() {
-  //   if (SVG.supported) {
-  //     requestAnimationFrame(function() {
-  //
-  //       var paper = SVG('ClassicalMusic').size(viewBox.x, viewBox.y)
-  //
-  //       // paper.circle(45).move(21,21).attr({ fill:'rgba(38,17,177, 1)'});
-  //
-  //     }); } else { alert('SVG not supported');} }, false);
-}
+  // let height = this.props.viewBox.y - (padding.height * 2);
+  // let width = this.props.viewBox.x - (padding.width * 2) - 14;
 
-render(){
-  // this.svg()
-  let topPadding = 18;
-  let height = this.props.viewBox.y - (topPadding * 2);
-  let sidePadding = 11;
-  let width = this.props.viewBox.x - (sidePadding * 2) - 14;
-
-  let padding = `${topPadding}px ${sidePadding}px`
 
     return(
-      <Container fluid className="wrapper" style={{ width: this.props.viewBox.x, height: this.props.viewBox.y, padding: padding}}>
-        <Container className="ClassicalMusic" id="ClassicalMusic" style={{width: width, height: height}}>
-            <Brand viewBox={this.props.viewBox} title={this.props.title} />
-            <Piano viewBox={this.props.viewBox} />
-        </Container>
+      <Container fluid className="wrapper" style={{ width: this.props.viewBox.x, height: this.props.viewBox.y, position: 'relative'}}>
+        <Background background={background} padding={padding} />
+        <Brand viewBox={this.props.viewBox} title={this.props.title} padding={padding} />
+        <Piano viewBox={this.props.viewBox} />
+        <Portrait viewBox={this.props.viewBox} padding={padding} />
+        <Tracks viewBox={this.props.viewBox} text={this.props.text} tracks={this.props.tracks}/>
       </Container>
     );
   }

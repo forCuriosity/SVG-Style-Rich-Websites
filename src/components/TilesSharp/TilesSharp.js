@@ -1,28 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Container } from 'semantic-ui-react'
 import SVG from 'svg.js'
 
-// import './TilesSharp.css'
-// import './tilesSquaresCircles'
-
-class TilesSharp extends Component {
-
-  boo(){
+const Arrows = (props) => {
     document.addEventListener('DOMContentLoaded', function() {
       if (SVG.supported) {
         requestAnimationFrame(function() {
 
+              let {x, y} = props.viewBox
 
-          var w = window,
-              d = document,
-              e = d.documentElement,
-              g = d.getElementsByTagName('body')[0],
-              x = w.innerWidth || e.clientWidth || g.clientWidth,
-              y = w.innerHeight|| e.clientHeight|| g.clientHeight,
-              xx = w.innerWidth || e.clientWidth || g.clientWidth,
-              yy = w.innerHeight|| e.clientHeight|| g.clientHeight;
+              let xx = props.viewBox.x
+              let yy = props.viewBox.y
               // TEST for values
-              // BEST-PRACTICE Rerun these variables every 2 seconds, if they are differnt, animate to new #
 
               x = (Math.round(x / 100) * 100) +100;
               y = (Math.round(y / 150) * 150) +150;
@@ -108,14 +97,11 @@ class TilesSharp extends Component {
 
 
         }); } else { alert('SVG not supported');} }, false);
-  }
 
-  render(){
-    this.boo()
     return(
     <Container fluid className="TilesSharp" id="TilesSharp" />
     );
-  }
+
 }
 
-export default TilesSharp
+export default Arrows
