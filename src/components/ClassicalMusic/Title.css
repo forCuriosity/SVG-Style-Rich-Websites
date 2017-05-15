@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Jaldi:700|Josefin+Slab|Martel+Sans:900|Martel:300');
+
+.titleContainer {
+  position: absolute;
+  bottom: 4.5%;
+  left: 13%;
+  display: table;
+  color: black;
+  fontSize: 3vw;
+}
+
+h3, h5, h6 {
+  margin: 15px!important;
+}
+
+h3 {
+  font-family: 'Martel Sans', sans-serif;
+  text-transform: uppercase;
+  color: black;
+  font-size: 3vw!important;
+  transform: scaleY(1.35);
+}
+
+h3 span {
+  font-size: 2vw!important;
+}
+
+h6 {
+  font-family: 'Josefin Slab', cursive;
+  color: black;
+  font-size: 2vw;
+}
+h5 {
+  font-family: 'Jaldi', sans-serif;
+  color: black;
+  font-size: 1.75vw!important;
+}
+
+h5 span {
+  text-transform: uppercase;
+  color: yellow;
+  font-size: 2vw;
+}

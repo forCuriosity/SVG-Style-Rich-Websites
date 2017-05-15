@@ -10,8 +10,8 @@ class Portrait extends Component {
 
     // Size of Original Piano
 
-    let widthViewBox = 527.2
-    let heightViewBox = 551
+    let widthViewBox = 600
+    let heightViewBox = 628
     // Size of Original Artboard
     let widthArtboard = 1600
     let heightArtboard = 1600
@@ -23,22 +23,22 @@ class Portrait extends Component {
 
     // CALCULATIONS
 
-    // Height of Piano
+    // Height of Portrait
     let ratioWidthOverHeight = heightViewBox / heightArtboard
     let height = y * ratioWidthOverHeight
 
-    // Height of Piano
+    // Height of Portrait
     let ratioHeightArtboard = widthViewBox/heightViewBox
     let width = height * ratioHeightArtboard;
 
 
-    // Margin of Piano
+    // Margin of Portrait
     let marginRight = x * (rightMarginArtboard/widthArtboard);
 
     let stylePortrait = {
       position: 'absolute',
       marginRight: marginRight,
-      right: '0',
+      right: '5',
       bottom: this.props.padding.height
     }
 

@@ -1,4 +1,6 @@
 import React from 'react'
+import './Tracks.css';
+import { Button } from 'semantic-ui-react'
 
 const Tracks = (props) => {
 
@@ -24,33 +26,37 @@ const Tracks = (props) => {
     // margin: `${marginTop} ${marginLeft}`,
   let styleTracks = {
     position: 'absolute',
-    top: '30%',
-    left: '80%',
+    top: '25%',
+    left: '76%',
     display: 'table',
     color: 'white',
-    fontSize: '3vw'
+    fontSize: '3vw',
+    marginRight: props.width
   }
 
   let styleFontTitle = {
-    fontSize: '2.5vw',
+    fontSize: '2.2vw',
     margin: 0
   }
   let styleFontSub = {
-    fontSize: '1vw',
+    fontSize: '1.2vw',
     color: '#FBE3B9',
     margin: 0
   }
 
-
   // console.log(this.props.tracks[0].sub)
 
   return(
-    <div style={{...styleTracks}} className="divtext">
-      <h4 style={{...styleFontTitle}}>Track #1</h4>
-      <p style={{...styleFontSub}}>IN F MINOR FOR GALA EVENT</p>
-      <h4 style={{...styleFontTitle}}>Track #2</h4>
-      <p style={{...styleFontSub}}>IN G MAJOR FOR COMERCIAL</p>
-    </div>
+    <Button.Group attached='top' vertical style={{...styleTracks}} className="divText">
+
+
+      {props.tracks.map(t => (
+        <Button compact basic color='white'>
+          <h4 style={{...styleFontTitle}}>{t.title}</h4>
+          <p style={{...styleFontSub}}>{t.sub}</p>
+        </Button>
+      ))}
+    </Button.Group>
   )
 }
 

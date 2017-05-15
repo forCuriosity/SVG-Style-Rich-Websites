@@ -1,32 +1,54 @@
 import React from 'react'
 
+import './Title.css'
+
 const Tracks = (props) => {
 
-  let styleTracks = {
-    position: 'absolute',
-    top: '30%',
-    left: '80%',
-    display: 'table',
-    color: 'white',
-    fontSize: '3vw'
-  }
+  let p = props;
 
-  let styleFontTitle = {
-    fontSize: '2.5vw',
-    margin: 0
-  }
-  let styleFontSub = {
-    fontSize: '1vw',
-    color: '#FBE3B9',
-    margin: 0
-  }
-
-
-  return(
-    <div style={{...styleTracks}} className="divtext">
-      <h4 style={{...styleFontTitle}}>Track #1</h4>
+  return (
+    <div className="titleContainer">
+      <h3>{p.name}, <span>{p.role}</span></h3>
+      <h6>{p.contact}</h6>
+      <h5>Operating at <span>{p.operatingAt}</span></h5>
     </div>
   )
 }
 
 export default Tracks
+
+// Best Practices for Responsive Text: http://webdesignerwall.com/tutorials/5-useful-css-tricks-for-responsive-design
+
+// import React, { Component } from 'react'
+// import { Button, Dimmer, Header, Image } from 'semantic-ui-react'
+//
+// export default class DimmerExampleEvents extends Component {
+//   state = {}
+//
+//   handleShow = () => this.setState({ active: true })
+//   handleHide = () => this.setState({ active: false })
+//
+//   render() {
+//     const { active } = this.state
+//     const content = (
+//       <div>
+//         <Header as='h2' inverted>Title</Header>
+//
+//         <Button primary>Add</Button>
+//         <Button>View</Button>
+//       </div>
+//     )
+//
+//     return (
+//       <Dimmer.Dimmable
+//         as={Image}
+//         dimmed={active}
+//         dimmer={{ active, content }}
+//         onMouseEnter={this.handleShow}
+//         onMouseLeave={this.handleHide}
+//         size='medium'
+//         src='/assets/images/wireframe/image.png'
+//       />
+//     )
+//   }
+// }
